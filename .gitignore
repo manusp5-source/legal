@@ -1,0 +1,13 @@
+# Credenciales — nunca versionar
+.env
+.env.*
+!.env.example
+ACCESOS-LOCAL.md
+
+# Temporales de ofimatica
+~$*
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
