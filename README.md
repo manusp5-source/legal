@@ -1,57 +1,61 @@
 # Legal — Agendia
 
-Documentación de cumplimiento común a los tres subproyectos (`clinicas-web`,
-`gtm-clinicas`, `UnicornIA-CRM`). Ninguno de estos documentos se publica en la
-web: son los que hay que poder enseñar cuando alguien pregunta.
+Compliance documentation shared across the three sub-projects (`clinicas-web`,
+`gtm-clinicas`, `UnicornIA-CRM`). None of these documents get published on the
+website: they're the ones you need to be able to show when someone asks.
 
-Última revisión: 15 de agosto de 2026.
+Last reviewed: August 15, 2026.
 
-## Qué hay aquí
+Note: the four legal documents listed below are Spanish-law templates and are
+intentionally kept in Spanish — translating them would undermine their legal
+validity in Spain.
 
-| Documento | Qué es | Cuándo lo necesitas |
+## What's here
+
+| Document | What it is | When you need it |
 |---|---|---|
-| [registro-actividades-tratamiento.md](registro-actividades-tratamiento.md) | RAT del art. 30 RGPD | Ya. Es obligatorio y la AEPD lo pide primero en cualquier inspección |
-| [interes-legitimo-outbound.md](interes-legitimo-outbound.md) | Valoración de interés legítimo (LIA) del correo y la visita en frío | Antes del primer envío del pipeline `gtm-clinicas` |
-| [aviso-primer-contacto.md](aviso-primer-contacto.md) | Texto del art. 14 para email, PDF y guion de puerta | En cada contacto en frío, sin excepción |
-| [contrato-encargado-tratamiento.md](contrato-encargado-tratamiento.md) | Plantilla del contrato del art. 28 | Firmado **antes** de recibir el primer registro de un cliente |
+| [registro-actividades-tratamiento.md](registro-actividades-tratamiento.md) | RAT (Records of Processing Activities) under GDPR art. 30 | Now. It's mandatory, and the AEPD (Spain's data protection authority) asks for it first in any inspection |
+| [interes-legitimo-outbound.md](interes-legitimo-outbound.md) | Legitimate interest assessment (LIA) for cold email and in-person visits | Before the first send of the `gtm-clinicas` pipeline |
+| [aviso-primer-contacto.md](aviso-primer-contacto.md) | Art. 14 notice text for email, PDF, and the door script | On every cold contact, no exceptions |
+| [contrato-encargado-tratamiento.md](contrato-encargado-tratamiento.md) | Art. 28 data processing agreement (DPA) template | Signed **before** receiving a client's first record |
 
-## Lo que falta rellenar
+## What's still missing
 
-Estos huecos bloquean la publicación de la web y la primera venta. Están
-marcados como `PENDIENTE_` en el código y como «PENDIENTE» en estos documentos.
+These gaps block the website launch and the first sale. They're marked
+`PENDIENTE_` in the code and "PENDIENTE" in these documents.
 
-| Hueco | Dónde aparece | Cómo se resuelve |
+| Gap | Where it appears | How to resolve it |
 |---|---|---|
-| NIF | `clinicas-web/src/lib/sitio.ts`, RAT, contrato art. 28 | Es tu NIF. 30 segundos |
-| Domicilio fiscal | Igual que el anterior | El que conste en el modelo 036/037 |
-| Correo de negocio | `sitio.ts` — hoy hay un Gmail personal | `hola@agendia.es` al comprar el dominio |
-| Teléfono de negocio | `sitio.ts` — Q-06 | Número propio, no el personal. Es el argumento de venta |
-| Proveedor de alojamiento | RAT (A3), contrato anexo III | Depende de dónde se despliegue |
-| Proveedor de modelo de lenguaje | RAT (A6), contrato anexo III | El que se contrate, con región europea |
-| Seguro de responsabilidad civil profesional | Contrato, cláusula 11 | No es obligación legal. Sí es lo que pregunta una clínica seria |
+| NIF (Spanish tax ID) | `clinicas-web/src/lib/sitio.ts`, RAT, art. 28 contract | It's your NIF. 30 seconds |
+| Registered business address | Same as above | Whatever's on file in tax form 036/037 |
+| Business email | `sitio.ts` — currently a personal Gmail | `hola@agendia.es` once the domain is purchased |
+| Business phone | `sitio.ts` — Q-06 | A dedicated number, not the personal one. It's a selling point |
+| Hosting provider | RAT (A3), contract annex III | Depends on where it gets deployed |
+| Language model provider | RAT (A6), contract annex III | Whichever gets contracted, with a European region |
+| Professional liability insurance | Contract, clause 11 | Not a legal requirement. It is what a serious clinic will ask about |
 
-## El orden
+## The order
 
-1. Rellenar NIF y domicilio → desbloquea aviso legal y privacidad → **publicar la web**
-2. Firmar el RAT (fecharlo y guardarlo) → obligación en vigor desde el primer tratamiento
-3. LIA + aviso del art. 14 → **antes** de que salga el primer correo de `gtm-clinicas`
-4. Contrato art. 28 revisado por abogado → antes de la primera clínica
+1. Fill in NIF and address → unlocks the legal notice and privacy pages → **publish the website**
+2. Sign the RAT (date it and keep it on file) → obligation in effect from the first processing activity
+3. LIA + art. 14 notice → **before** the first `gtm-clinicas` email goes out
+4. Art. 28 contract reviewed by a lawyer → before the first clinic
 
-## Qué está ya implementado en código
+## What's already implemented in code
 
-| Salvaguarda | Dónde |
+| Safeguard | Where |
 |---|---|
-| Lista de exclusión permanente, consultada antes de cada contacto | `gtm-clinicas/scripts/10-excluir.mjs` + filtro en los scripts 3, 4, 5 y 6. Falla cerrado si el fichero no existe |
-| Datos personales fuera del control de versiones | `gtm-clinicas/.gitignore` — verificado con `git ls-files` |
-| Cabeceras de seguridad (art. 32) | `clinicas-web/public/_headers` y `vercel.json` |
-| Cero terceros con almacenamiento en el navegador | `clinicas-web` sin embed de Cal.com (DEC-017) |
+| Permanent do-not-contact list, checked before every outreach | `gtm-clinicas/scripts/10-excluir.mjs` + filter in scripts 3, 4, 5, and 6. Fails closed if the file doesn't exist |
+| Personal data kept out of version control | `gtm-clinicas/.gitignore` — verified with `git ls-files` |
+| Security headers (art. 32) | `clinicas-web/public/_headers` and `vercel.json` |
+| Zero third parties with browser storage | `clinicas-web` has no Cal.com embed (DEC-017) |
 
-Lo que sigue siendo papel y no código: el RAT, la LIA, los textos del art. 14 —
-que hay que **pegar** en cada correo y en el PDF— y el contrato del art. 28.
+What's still paper and not code: the RAT, the LIA, the art. 14 texts — which
+have to be **pasted** into every email and PDF — and the art. 28 contract.
 
-## Lo que esto no es
+## What this is not
 
-Plantillas de trabajo redactadas contra el RGPD, la LOPDGDD y la LSSI-CE
-vigentes. **No sustituyen a revisión jurídica**, y el contrato del art. 28 es
-justamente el documento donde eso importa: lo firma un tercero y regula
-responsabilidad sobre datos de salud.
+Working templates drafted against the current GDPR, LOPDGDD, and LSSI-CE.
+**They do not replace legal review**, and the art. 28 contract is exactly the
+document where that matters most: a third party signs it, and it governs
+liability over health data.

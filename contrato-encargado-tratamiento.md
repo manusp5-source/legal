@@ -1,3 +1,5 @@
+*This document is a Spanish-law legal template and is intentionally kept in Spanish.*
+
 # Contrato de encargado del tratamiento
 
 **Art. 28.3 del Reglamento (UE) 2016/679 · art. 33 LOPDGDD**

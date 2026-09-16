@@ -1,3 +1,5 @@
+*This document is a Spanish-law legal template and is intentionally kept in Spanish.*
+
 # Valoración de interés legítimo — prospección a clínicas
 
 **Art. 6.1.f RGPD · considerando 47 · art. 21 LSSI-CE**

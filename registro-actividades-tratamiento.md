@@ -1,3 +1,5 @@
+*This document is a Spanish-law legal template and is intentionally kept in Spanish.*
+
 # Registro de Actividades de Tratamiento (RAT)
 
 **Art. 30 del Reglamento (UE) 2016/679 (RGPD)**

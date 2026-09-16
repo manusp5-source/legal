@@ -1,3 +1,5 @@
+*This document is a Spanish-law legal template and is intentionally kept in Spanish.*
+
 # Aviso del art. 14 — textos para el primer contacto
 
 Cuando los datos **no los da el interesado** sino que se obtienen de una fuente
